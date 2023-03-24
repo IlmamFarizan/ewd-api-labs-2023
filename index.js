@@ -6,8 +6,6 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json());
-
 const port = process.env.PORT;
 
 app.use('/api/movies', moviesRouter);
