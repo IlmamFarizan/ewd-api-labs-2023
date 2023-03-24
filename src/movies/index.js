@@ -1,6 +1,6 @@
 import express from 'express';
-import {movies, movieReviews, movieDetails} from './moviesData';
-import uniqid from 'uniqid'
+import {movies, movieReviews, movieDetails, movieGenres} from './moviesData';
+import uniqid from 'uniqid';
 
 const router = express.Router(); 
 
@@ -47,6 +47,11 @@ router.post('/:id/reviews', (req, res) => {
             status_code: 404
         });
     }
+});
+
+// Get movie genres
+router.get('/genres', (req, res) => {
+        res.status(200).json(movieGenres);  
 });
 
 export default router;
