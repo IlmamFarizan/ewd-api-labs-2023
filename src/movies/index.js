@@ -4,6 +4,11 @@ import uniqid from 'uniqid';
 
 const router = express.Router(); 
 
+// Get movie genres
+router.get('/genres', (req, res) => {
+    res.status(200).json(movieGenres);  
+});
+
 // Get movie reviews
 router.get('/:id/reviews', (req, res) => {
     const id = parseInt(req.params.id);
