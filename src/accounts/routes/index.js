@@ -8,11 +8,14 @@ const createRouter = (dependencies) => {
     router.route('/')
         .post(accountsController.createAccount);
 
-        router.route('/')
+    router.route('/')
         .get(accountsController.listAccounts);
 
     router.route('/:id')
         .get(accountsController.getAccount);
+
+    router.route('/update/:id')
+        .put(accountsController.updateAccount);
 
     return router;
 };
