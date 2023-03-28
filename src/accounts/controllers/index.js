@@ -36,8 +36,8 @@ export default (dependencies) => {
         const email = request.body.email;
         const password = request.body.password;
         // Treatment
-        const account = new Account(id, firstName, lastName, email, password, dependencies);
-        const updatedAccount = await accountService.updateAccount(account);
+        const account = new Account(id, firstName, lastName, email, password);
+        const updatedAccount = await accountService.updateAccount(account, dependencies);
         // Output
         response.status(200).json(updatedAccount);
     };
