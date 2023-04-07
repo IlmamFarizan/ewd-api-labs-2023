@@ -1,8 +1,10 @@
 import AccountsRepositoryMongo from '../accounts/repositories/InMemoryRepository';
 import AccountsRepositoryInMemory from '../accounts/repositories/InMemoryRepository';
+import AccountSchema from '../accounts/validators';
 
 const buildDependencies = () => {
   const dependencies = {
+    accountSchema: AccountSchema,
   };
 
   if (process.env.DATABASE_DIALECT === "in-memory") {
